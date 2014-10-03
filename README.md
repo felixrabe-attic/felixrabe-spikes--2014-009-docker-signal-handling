@@ -1,8 +1,17 @@
 # Docker signal handling
 
+Build:
+
+    docker build -t test-sigint .
+
 Run as "int":
 
-    docker build -t test-sigint . && docker run --name int --rm test-sigint 4 ; echo "Exit code: $?"
+    docker run --name int --rm test-sigint 4
+    echo "Exit code: $?"
+
+or in the background:
+
+    docker run --name int -d test-sigint 4
 
 Monitor and kill:
 
