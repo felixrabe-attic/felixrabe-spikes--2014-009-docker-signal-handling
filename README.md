@@ -1,5 +1,11 @@
 # Docker signal handling
 
+## Caveat (aka Known Issues)
+
+Whereas this works, [wait-for-signals-2.sh](./wait-for-signals-2.sh) (commented out as `ENTRYPOINT` in [Dockerfile](./Dockerfile)) will not react to signals. See [related Docker issues](https://github.com/docker/docker/issues?q=is%3Aopen+is%3Aissue+signal).
+
+## How to run this spike
+
 Build:
 
     docker build -t test-sigint .
